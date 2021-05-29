@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PMovement : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     [SerializeField]
     Vector3 direction;
   
