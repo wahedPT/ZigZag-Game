@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,8 +20,21 @@ public class Tiles : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Sucess");
+           
+            
+                TileManager.Instance.SpawnTile();
+                 StartCoroutine("FallDown");
+
+
         }
         
+    }
+
+    IEnumerator FallDown()
+    {
+        yield return new WaitForSeconds(5);
+        rb.isKinematic = false;
+        //GetComponent<Rigidbody>().isKinematic = false;
+
     }
 }
