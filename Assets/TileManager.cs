@@ -50,9 +50,23 @@ public class TileManager : MonoBehaviour
             leftTilePool.Push(Instantiate(tiles[1]));
             forwardTilePoool.Peek().SetActive(false);
            leftTilePool.Peek().SetActive(false);
+            forwardTilePoool.Peek().name = "ForwardTile";
+            leftTilePool.Peek().name = "LeftTile";
            
         }
      }
+    public void AddForwardTilePool(GameObject tempObj)
+    {
+        forwardTilePoool.Push(tempObj);
+        forwardTilePoool.Peek().SetActive(false);
+    }
+    public void AddLeftTilePool(GameObject tempObj)
+    {
+       leftTilePool.Push(tempObj);
+        leftTilePool.Peek().SetActive(false);
+    }
+
+
     public void SpawnTile()
     {
 
