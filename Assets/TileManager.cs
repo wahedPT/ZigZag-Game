@@ -94,8 +94,13 @@ public class TileManager : MonoBehaviour
             currentTile = temp;
         }
 
+        int pickupCoinRange = Random.Range(0, 10);
+        if(pickupCoinRange==0)
+        {
+            currentTile.transform.GetChild(3).gameObject.SetActive(true);
+        }
       
-        //currentTile = Instantiate(tiles[index],currentTile.transform.GetChild(index).position, Quaternion.identity);
+       
 
 
     }
